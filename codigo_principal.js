@@ -15,6 +15,8 @@ var yMaxBotao3 = yMinBotao3 + alturaBotao
 var imagemEducador;
 var imagemProgramadora;
 
+var fundoMenu;
+
 var tela = 0;
 // tela 1: instruções 
 // tela 2: creditos 
@@ -34,6 +36,20 @@ function menuBotao(texto, yMin, yMax, opcao) {
     textSize(26);
     fill(0);
     text(texto, xMinBotao + 35, yMin + 40);
+}
+
+function telaMenu() {
+    background(220);
+
+    textSize(32);
+    fill(10);
+    text("Desvendando Sequências", 70, 50);
+
+    menuBotao("Jogar", yMinBotao3, yMaxBotao3, 3);
+
+    menuBotao("Instruções", yMinBotao1, yMaxBotao1, 1);
+
+    menuBotao("Créditos", yMinBotao2, yMaxBotao2, 2);
 }
 
 function telaInstrucoes() {
@@ -77,17 +93,7 @@ function setup() {
 
 function draw() {
     if (tela == 0) {
-        background(220);
-        textSize(32);
-        fill(10);
-        text("Desvendando Sequências", 70, 50);
-
-        menuBotao("Jogar", yMinBotao3, yMaxBotao3, 3);
-
-        menuBotao("Instruções", yMinBotao1, yMaxBotao1, 1);
-
-        menuBotao("Créditos", yMinBotao2, yMaxBotao2, 2);
-
+        telaMenu();
     }
     if (tela == 1) {
         telaInstrucoes();
