@@ -45,6 +45,7 @@ function opcaoBotao(xMin, xMax, yMin, yMax, largura, altura, opcao) {
     else {
         noFill();
     }
+    stroke(corDasBordas);
     rect(xMin, yMin, largura, altura, 15);
     textSize(26);
     fill(0);
@@ -62,6 +63,7 @@ function fase1() {
     var larguraTriangulo = 60;
     var xTriangulo = 50;
     var yTriangulo = 100;
+    noStroke();
     fill(0, 255, 0)
     triangle(xTriangulo, yTriangulo, xTriangulo + larguraTriangulo / 2, yTriangulo + alturaTriangulo, xTriangulo + larguraTriangulo, yTriangulo)
     fill(255, 255, 0)
