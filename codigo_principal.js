@@ -4,6 +4,7 @@ var escolhaFase = 0;
 var pontos = 0;
 
 var corDaFonte = '#E11584';
+var corDasBordas = '#9E4244'
 
 var deslocamentoBotaoMenu = 90
 var xMinBotao = 150
@@ -53,8 +54,9 @@ function opcaoBotao(xMin, xMax, yMin, yMax, largura, altura, opcao) {
 function fase1() {
     background(220);
     textSize(28);
-    fill(10);
-    text("Qual o próximo elemento?", 70, 50);
+    fill(corDaFonte);
+    textAlign(LEFT);
+    text("Qual o próximo elemento?", 20, 50);
 
     var alturaTriangulo = 60;
     var larguraTriangulo = 60;
@@ -64,9 +66,9 @@ function fase1() {
     triangle(xTriangulo, yTriangulo, xTriangulo + larguraTriangulo / 2, yTriangulo + alturaTriangulo, xTriangulo + larguraTriangulo, yTriangulo)
     fill(255, 255, 0)
     ellipse(160, 125, 60, 60)
-    var xTriangulo2 = 250;
+    var xTriangulo2 = 220;
     fill(10);
-    triangle(xTriangulo2, yTriangulo, xTriangulo2 + larguraTriangulo / 2, yTriangulo + alturaTriangulo, xTriangulo2 + larguraTriangulo, yTriangulo)
+    triangle(xTriangulo2, yTriangulo + alturaTriangulo, xTriangulo2 + larguraTriangulo / 2, yTriangulo, xTriangulo2 + larguraTriangulo, yTriangulo + alturaTriangulo)
 
     fill(10);
     escolhaFase = 0;
@@ -78,19 +80,21 @@ function fase1() {
 }
 
 function menuBotao(texto, yMin, yMax, opcao) {
-    // Botão 2 
+
     if (mouseX > xMinBotao && mouseX < xMaxBotao && mouseY > yMin && mouseY < yMax) {
-        fill(250);
+        fill('#fff0f3');
         if (mouseIsPressed) {
             tela = opcao;
         }
     }
     else {
-        noFill();
+        fill('#FEC5E5');
     }
+    stroke(corDasBordas);
     rect(xMinBotao, yMin, larguraBotao, alturaBotao, 15);
+    noStroke();
     textSize(26);
-    fill(0);
+    fill(corDaFonte);
     text(texto, xMinBotao, yMin + 20, larguraBotao);
 }
 
@@ -112,9 +116,12 @@ function telaMenu() {
 function telaInstrucoes() {
     background(220);
     textSize(36);
-    fill(10);
-    text("Instruções", 150, 70);
+    textAlign(CENTER);
+    fill(corDaFonte)
+    text("Instruções", width / 2, 70);
     textSize(16);
+    fill(80);
+    textAlign(LEFT);
     text("Primeira instrução: use o mouse para selecionar as opções. ", 20, 120, 460)
 }
 
@@ -122,7 +129,8 @@ function telaInstrucoes() {
 function telaCreditos() {
     background(220);
     textSize(36);
-    fill(10);
+    textAlign(LEFT);
+    fill(corDaFonte);
     text("Créditos", 160, 70);
     textSize(20);
     text("RENATO RODRIGUES", 200, 120);
