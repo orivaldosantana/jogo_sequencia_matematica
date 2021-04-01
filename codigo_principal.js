@@ -140,16 +140,16 @@ function telaCreditos() {
     text("Créditos", 160, 70);
     textSize(20);
     text("RENATO RODRIGUES", 200, 120);
-    text("JÚLIA MAFRA", 240, 300);
+    text("JÚLIA MAFRA", 240, 350);
     textSize(16);
     text("Função: Educador", 230, 140);
-    text("Função: Programadora", 230, 320);
+    text("Função: Programadora", 230, 370);
     textSize(14);
     fill(80);
-    text("Licenciado em Matemática pela Universidade Federal do Rio Grande do Norte, Especialista em Educação ...", 180, 165, 300)
-    text("Estudante do Bacharelado em Ciências e  Tecnologia na UFRN.", 180, 345, 300)
+    text("Licenciado em Matemática pela Universidade Federal do Rio Grande do Norte, Especialista em Educação Matemática para o Ensino Fundamental e Medio pelo Instituto de Educação Superior Presidente Kennedy. Mestre em Ensino de Ciências Naturais e Matemática pelo Programa de Pós-Graduação em Ensino de Ciências e Matemática - PPGECNM - UFRN.", 180, 165, 300)
+    text("Estudante do Bacharelado em Ciências e Tecnologia na UFRN.", 180, 395, 300)
     image(imagemEducador, 20, 110);
-    image(imagemProgramadora, 20, 280);
+    image(imagemProgramadora, 20, 330);
 }
 
 function preload() {
