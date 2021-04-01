@@ -124,7 +124,11 @@ function telaInstrucoes() {
     textSize(16);
     fill(80);
     textAlign(LEFT);
-    text("Primeira instrução: use o mouse para selecionar as opções. ", 20, 120, 460)
+    text("Use o mouse para selecionar as opções. ", 20, 120, 460)
+    text("O objetivo do jogo é acerta qual é o próximo elemento da sequência apresentada. ", 20, 150, 460)
+    textSize(14);
+    text("Este jogo é baseado na Habilidade EF02MA11 da BNCC. Esta habilidade trata da identificação de regularidades em sequências, observação e determinação de elementos ausentes na sequência (numéricas e figurativas; recursivas ou repetitivas). ", 20, 220, 460)
+
 }
 
 
