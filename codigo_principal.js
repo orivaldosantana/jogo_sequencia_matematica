@@ -33,14 +33,37 @@ var tela = 0;
 // tela 1: instruções 
 // tela 2: creditos 
 
-function opcaoBotao(xMin, xMax, yMin, yMax, largura, altura, opcao) {
+function acabouJogo() {
+    background(220);
+    textSize(28);
+    fill(10);
+    textAlign(LEFT);
+    text("Game Over!!", 20, 50);
+}
+
+function mouseClicked() {
+    if (tela == 3 && nivel == 1) {
+        if (escolhaFase == 1 || escolhaFase == 2) {
+            tela = 4;
+        }
+        if (escolhaFase == 3) {
+            nivel = 2;
+        }
+    }
+
+}
+
+function opcaoBotao(xMin, yMin, largura, altura, opcao) {
     // Botão 2 
+    yMax = yMin + altura
+    xMax = xMin + largura
     if (mouseX > xMin && mouseX < xMax && mouseY > yMin && mouseY < yMax) {
         fill(250);
-        if (mouseIsPressed) {
+        escolhaFase = opcao;
+        /*if (mouseIsPressed) {
             escolhaFase = opcao;
             console.log("Escolha: ", escolhaFase)
-        }
+        }*/
     }
     else {
         noFill();
@@ -52,31 +75,74 @@ function opcaoBotao(xMin, xMax, yMin, yMax, largura, altura, opcao) {
 
 }
 
+function triangulo(x, y, largura, altura, cor, posicaoNormal = true) {
+    //var alturaTriangulo = 50;
+    //var larguraTriangulo = 50;
+    //var xTriangulo = 40;
+    //var yTriangulo = 100;
+    noStroke();
+    fill(cor)
+    if (posicaoNormal) {
+        triangle(x, y + altura, x + largura / 2, y, x + largura, y + altura)
+    }
+    else {
+        triangle(x, y, x + largura / 2, y + altura, x + largura, y)
+    }
+
+}
+
+function fase2() {
+    background(220);
+    textSize(28);
+    fill(10);
+    textAlign(LEFT);
+    text("Fase 2", 20, 50);
+}
+
+
+
 function fase1() {
     background(220);
     textSize(28);
-    fill(corDaFonte);
+    fill(10);
     textAlign(LEFT);
     text("Qual o próximo elemento?", 20, 50);
 
-    var alturaTriangulo = 60;
-    var larguraTriangulo = 60;
-    var xTriangulo = 50;
+    var alturaTriangulo = 50;
+    var larguraTriangulo = 50;
+    var xTriangulo = 40;
     var yTriangulo = 100;
+    var corVerde = '#0A0'
+    var corVermelha = '#C00'
+    var corAmarela = '#FA0'
     noStroke();
-    fill(0, 255, 0)
+    fill(corVerde)
     triangle(xTriangulo, yTriangulo, xTriangulo + larguraTriangulo / 2, yTriangulo + alturaTriangulo, xTriangulo + larguraTriangulo, yTriangulo)
-    fill(255, 255, 0)
-    ellipse(160, 125, 60, 60)
-    var xTriangulo2 = 220;
+    fill(corAmarela)
+    ellipse(yTriangulo + 35, 125, 50, 50)
+    var xTriangulo2 = yTriangulo + 80;
     fill(10);
     triangle(xTriangulo2, yTriangulo + alturaTriangulo, xTriangulo2 + larguraTriangulo / 2, yTriangulo, xTriangulo2 + larguraTriangulo, yTriangulo + alturaTriangulo)
+    fill(corVermelha)
+    ellipse(xTriangulo + 230, 125, 50, 50)
+
+    xTriangulo = 40;
+    yTriangulo = 100;
+
+    triangulo(310, yTriangulo, larguraTriangulo, alturaTriangulo, '#0A0', false)
 
     fill(10);
     escolhaFase = 0;
-    opcaoBotao(100, 200, 250, 300, 70, 50, 1)
+    opcaoBotao(100, 250, 80, 80, 1)
+    triangulo(115, 265, larguraTriangulo, alturaTriangulo, 10)
 
-    opcaoBotao(250, 350, 250, 300, 70, 50, 2)
+    opcaoBotao(200, 250, 80, 80, 2)
+    fill(corVermelha)
+    ellipse(240, 290, 50, 50)
+
+    opcaoBotao(300, 250, 80, 80, 3)
+    fill(corAmarela)
+    ellipse(340, 290, 50, 50)
 
 
 }
@@ -176,6 +242,11 @@ function draw() {
         if (nivel == 1) {
             fase1();
         }
-
+        if (nivel == 2) {
+            fase2();
+        }
+    }
+    if (tela == 4) {
+        acabouJogo()
     }
 }
