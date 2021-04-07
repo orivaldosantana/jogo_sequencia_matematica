@@ -15,3 +15,4 @@ Para acessar a versão atual do jogo: https://orivaldosantana.github.io/jogo_seq
 * [Extra: Organizando o código com uma função para o botão do menu](https://youtu.be/TlX3O3rQSZM)
 * [Implementando o início da primeira fase do jogo](https://youtu.be/XMedA3Ytw8I)
 * [Modificando a fonte do texto](https://youtu.be/Npl8Lop_ulo)
+* [Implementando a Fase 1 do Jogo](https://youtu.be/IPYeH3KhqBg)
