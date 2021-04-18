@@ -50,6 +50,16 @@ function mouseClicked() {
             nivel = 2;
         }
     }
+    else {
+        if (tela == 3 && nivel == 2) {
+            if (escolhaFase == 2 || escolhaFase == 3) {
+                tela = 4;
+            }
+            if (escolhaFase == 1) {
+                nivel = 3;
+            }
+        }
+    }
 
 }
 
@@ -91,12 +101,46 @@ function triangulo(x, y, largura, altura, cor, posicaoNormal = true) {
 
 }
 
+function fase3() {
+    background(220);
+    textSize(28);
+    fill(10);
+    textAlign(LEFT);
+    text("Fase 3", 20, 50);
+
+
+}
+
 function fase2() {
     background(220);
     textSize(28);
     fill(10);
     textAlign(LEFT);
-    text("Fase 2", 20, 50);
+    text("Qual o próximo número?", 20, 50);
+
+    textSize(44);
+    fill(50);
+    text('30', 40, 150);
+
+    text('27', 140, 150);
+
+    text('24', 240, 150);
+
+    text('?', 340, 150);
+
+    escolhaFase = 0;
+    opcaoBotao(100, 250, 80, 80, 1);
+    textSize(44);
+    text('21', 115, 305);
+
+    opcaoBotao(200, 250, 80, 80, 2);
+    textSize(44);
+    text('19', 215, 305);
+
+    opcaoBotao(300, 250, 80, 80, 3);
+    textSize(44);
+    text('17', 315, 305);
+
 }
 
 
@@ -244,6 +288,9 @@ function draw() {
         }
         if (nivel == 2) {
             fase2();
+        }
+        if (nivel == 3) {
+            fase3();
         }
     }
     if (tela == 4) {
