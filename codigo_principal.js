@@ -266,6 +266,7 @@ function preload() {
     imagemEducador = loadImage("./imagens/foto_educador.png")
     imagemProgramadora = loadImage("./imagens/foto_programadora.png");
     fontChango = loadFont("./font/Chango-Regular.ttf")
+    
 }
 
 function setup() {
